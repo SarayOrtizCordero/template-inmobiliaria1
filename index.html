@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none';
-                script-src 'self' 'sha256-SSDw1Mdh2EUEJWcJTwZKJwFGEjV1GmwO8YkzH0WpmNU=' https://cdn.tailwindcss.com;
+                script-src 'self' 'unsafe-eval' https://cdn.tailwindcss.com;
                 style-src  'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
                 font-src   https://fonts.gstatic.com;
                 img-src    'self' https://images.unsplash.com;
@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+IlqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -325,8 +326,6 @@
         </div>
     </footer>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/tailwind-config.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js">
 </body>
 </html>

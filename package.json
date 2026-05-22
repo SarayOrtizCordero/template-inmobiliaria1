@@ -1,0 +1,12 @@
+{
+  "name": "elite-realty",
+  "version": "1.0.0",
+  "description": "Elite Realty - Sitio web inmobiliario",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}
