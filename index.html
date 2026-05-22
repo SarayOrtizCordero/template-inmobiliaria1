@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none';
+                script-src 'self' 'sha256-SSDw1Mdh2EUEJWcJTwZKJwFGEjV1GmwO8YkzH0WpmNU=' https://cdn.tailwindcss.com;
+                style-src  'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+                font-src   https://fonts.gstatic.com;
+                img-src    'self' https://images.unsplash.com;
+                connect-src 'none';
+                base-uri   'self';
+                form-action 'none';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Elite Realty - Tu Nuevo Hogar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+IlqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+    <!-- ── Header ── -->
+    <header class="text-white fixed top-0 w-full z-50 transition-all duration-400 header-transparent" id="main-header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="font-serif text-2xl font-bold tracking-widest">ELITE<span class="text-accent">REALTY</span></a>
+
+            <!-- Desktop nav -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio"       class="nav-link active  hover:text-accent transition duration-300">Inicio</a>
+                <a href="#propiedades"  class="nav-link         hover:text-accent transition duration-300">Propiedades</a>
+                <a href="#contacto"     class="nav-link         hover:text-accent transition duration-300">Contacto</a>
+            </div>
+
+            <!-- Hamburger (mobile) -->
+            <button id="menu-btn" aria-label="Abrir menú de navegación"
+                    class="md:hidden flex flex-col gap-[5px] p-2">
+                <span id="bar1" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span id="bar2" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span id="bar3" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+            </button>
+        </nav>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-primary px-6 py-4 flex flex-col gap-4">
+            <a href="#inicio"      class="hover:text-accent transition">Inicio</a>
+            <a href="#propiedades" class="hover:text-accent transition">Propiedades</a>
+            <a href="#contacto"    class="hover:text-accent transition">Contacto</a>
+        </div>
+    </header>
+
+    <!-- ── Hero (Inicio) ── -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center text-center text-white">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80"
+             class="absolute inset-0 w-full h-full object-cover" alt="Villa de lujo con piscina en España">
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/75"></div>
+
+        <div class="relative z-10 px-4 max-w-4xl mx-auto">
+            <p class="text-accent tracking-[0.3em] uppercase text-sm font-medium mb-4
+                       animate__animated animate__fadeInDown">
+                Propiedades exclusivas · España
+            </p>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-wide mb-6
+                        animate__animated animate__fadeInUp animate__delay-1s">
+                Encuentra tu lugar<br>en el mundo
+            </h1>
+            <p class="text-lg md:text-xl text-white/80 font-light mb-10
+                       animate__animated animate__fadeInUp animate__delay-2s">
+                Residencias premium en las mejores zonas de España
+            </p>
+
+            <!-- Glassmorphism search bar -->
+            <div class="backdrop-blur-md bg-white/10 border border-white/20 p-4 rounded-2xl shadow-2xl
+                         flex flex-wrap gap-3 justify-center
+                         animate__animated animate__fadeInUp animate__delay-2s">
+                <label for="ubicacion" class="sr-only">Ubicación</label>
+                <input type="text" id="ubicacion" name="ubicacion" placeholder="Ubicación (ej. Sitges, Marbella…)"
+                       class="bg-white/15 text-white placeholder-white/60 border border-white/30
+                              p-3 rounded-lg w-64
+                              focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent">
+                <label for="tipo" class="sr-only">Tipo de Propiedad</label>
+                <select id="tipo"
+                        class="bg-white/15 text-white border border-white/30
+                               p-3 rounded-lg
+                               focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent">
+                    <option value="" class="text-gray-800">Tipo de propiedad</option>
+                    <option class="text-gray-800">Casa</option>
+                    <option class="text-gray-800">Apartamento</option>
+                    <option class="text-gray-800">Villa</option>
+                    <option class="text-gray-800">Bungalow</option>
+                </select>
+                <button type="button"
+                        class="btn-accent px-8 py-3 rounded-lg font-semibold tracking-wider shadow-md">
+                    BUSCAR
+                </button>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <a href="#propiedades" aria-label="Ver propiedades"
+           class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-accent transition animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- ── Propiedades ── -->
+    <section id="propiedades" class="bg-gray-50 py-24 scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-14">
+                <p class="text-accent-dark tracking-[0.25em] uppercase text-sm font-medium mb-2">Nuestra Cartera</p>
+                <h2 class="font-serif text-4xl font-bold text-primary">Últimos inmuebles en venta</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Card 1 -->
+                <div class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-500 card-reveal">
+                    <div class="relative aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+                             alt="Calma Residences en Sitges"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-primary/80 flex items-center justify-center
+                                    opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-semibold tracking-[0.2em] uppercase text-sm
+                                         border border-white/60 px-6 py-2">Ver propiedad</span>
+                        </div>
+                        <span class="absolute top-3 left-3 text-xs font-semibold
+                                     bg-accent/20 text-accent border border-accent/40
+                                     px-3 py-1 rounded-full uppercase tracking-wider">Obra Nueva</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-primary">Calma Residences · Sitges</h3>
+                        <p class="text-gray-500 text-sm mt-1">Desde 114 m² | 3 Habitaciones</p>
+                        <div class="flex justify-between items-center mt-5">
+                            <span class="font-serif text-2xl font-bold text-primary">780.000 €</span>
+                            <button type="button"
+                                    class="btn-detail border border-accent text-accent-dark px-4 py-1.5 rounded-full text-sm transition-all duration-200">
+                                Ver detalles →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-500 card-reveal">
+                    <div class="relative aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80"
+                             alt="Villa Exclusiva en Marbella"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-primary/80 flex items-center justify-center
+                                    opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-semibold tracking-[0.2em] uppercase text-sm
+                                         border border-white/60 px-6 py-2">Ver propiedad</span>
+                        </div>
+                        <span class="absolute top-3 left-3 text-xs font-semibold
+                                     bg-primary/10 text-primary border border-primary/20
+                                     px-3 py-1 rounded-full uppercase tracking-wider">Lujo</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-primary">Villa Exclusiva · Marbella</h3>
+                        <p class="text-gray-500 text-sm mt-1">639 m² const. | 1.368 m² de terreno</p>
+                        <div class="flex justify-between items-center mt-5">
+                            <span class="font-serif text-2xl font-bold text-primary">2.990.000 €</span>
+                            <button type="button"
+                                    class="btn-detail border border-accent text-accent-dark px-4 py-1.5 rounded-full text-sm transition-all duration-200">
+                                Ver detalles →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-500 card-reveal">
+                    <div class="relative aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80"
+                             alt="Bungalows Lo Romero en Alicante"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-primary/80 flex items-center justify-center
+                                    opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-semibold tracking-[0.2em] uppercase text-sm
+                                         border border-white/60 px-6 py-2">Ver propiedad</span>
+                        </div>
+                        <span class="absolute top-3 left-3 text-xs font-semibold
+                                     bg-gray-800 text-white
+                                     px-3 py-1 rounded-full uppercase tracking-wider">Golf Resort</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-primary">Lo Romero Golf · Alicante</h3>
+                        <p class="text-gray-500 text-sm mt-1">75 m² | 3 Hab. | Piscina Comunitaria</p>
+                        <div class="flex justify-between items-center mt-5">
+                            <span class="font-serif text-2xl font-bold text-primary">299.900 €</span>
+                            <button type="button"
+                                    class="btn-detail border border-accent text-accent-dark px-4 py-1.5 rounded-full text-sm transition-all duration-200">
+                                Ver detalles →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Contacto ── -->
+    <section id="contacto" class="bg-white py-24 scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-14">
+                <p class="text-accent-dark tracking-[0.25em] uppercase text-sm font-medium mb-2">Estamos aquí</p>
+                <h2 class="font-serif text-4xl font-bold text-primary">¿Hablamos?</h2>
+            </div>
+
+            <div class="flex flex-wrap -mx-4">
+                <!-- Formulario -->
+                <div class="w-full lg:w-2/3 px-4 mb-8">
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                        <h3 class="font-serif text-2xl font-bold text-primary mb-6">Te llamamos cuando quieras</h3>
+                        <form onsubmit="return false;" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido *"
+                                   autocomplete="name"
+                                   class="border border-gray-200 p-3 rounded-lg bg-white
+                                          focus:ring-2 focus:ring-accent focus:border-accent outline-none transition" required>
+                            <input type="email" id="email" name="email" placeholder="Email *"
+                                   autocomplete="email"
+                                   class="border border-gray-200 p-3 rounded-lg bg-white
+                                          focus:ring-2 focus:ring-accent focus:border-accent outline-none transition" required>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono (ej. +34 600…)"
+                                   autocomplete="tel"
+                                   pattern="[+]?[0-9\s\-()]{9,20}"
+                                   title="Introduce un número de teléfono válido (ej. +34 600 123 456)"
+                                   class="border border-gray-200 p-3 rounded-lg bg-white
+                                          focus:ring-2 focus:ring-accent focus:border-accent outline-none transition" required>
+                            <select id="motivo" name="motivo" aria-label="Motivo de consulta"
+                                    class="border border-gray-200 p-3 rounded-lg bg-white
+                                           focus:ring-2 focus:ring-accent focus:border-accent outline-none transition">
+                                <option value="">Motivo de consulta</option>
+                                <option value="primera-vivienda">Compra 1ª vivienda</option>
+                                <option value="inversion">Inversión</option>
+                                <option value="alquiler">Alquiler</option>
+                            </select>
+                            <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?"
+                                      class="border border-gray-200 p-3 rounded-lg bg-white
+                                             focus:ring-2 focus:ring-accent focus:border-accent outline-none transition
+                                             md:col-span-2 h-32 resize-none"></textarea>
+                            <div class="md:col-span-2 flex items-center gap-2">
+                                <input type="checkbox" id="privacy" name="privacidad" value="aceptado" required class="w-4 h-4 accent-[#C5A059]">
+                                <label for="privacy" class="text-sm text-gray-600">
+                                    Acepto la <a href="#" class="text-accent-dark hover:underline">política de privacidad</a>
+                                </label>
+                            </div>
+                            <div class="md:col-span-2">
+                                <button type="submit"
+                                        class="btn-accent font-semibold py-3 px-10 rounded-full tracking-wider shadow-md">
+                                    ENVIAR CONSULTA →
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Testimonios -->
+                <div class="w-full lg:w-1/3 px-4">
+                    <h3 class="font-serif text-2xl font-bold text-primary mb-6">Lo que dicen nuestros clientes</h3>
+                    <div class="space-y-4">
+                        <div class="bg-[#F7F3EA] p-5 rounded-xl border-l-4 border-accent">
+                            <p class="italic text-gray-600 text-sm leading-relaxed">
+                                "El asesoramiento para la compra en Sitges fue excepcional. Total transparencia en todo el proceso."
+                            </p>
+                            <div class="flex items-center gap-2 mt-3">
+                                <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center
+                                            text-accent font-bold text-sm shrink-0">A</div>
+                                <p class="font-semibold text-primary text-sm">Alberto Prado</p>
+                            </div>
+                        </div>
+                        <div class="bg-[#F7F3EA] p-5 rounded-xl border-l-4 border-accent">
+                            <p class="italic text-gray-600 text-sm leading-relaxed">
+                                "Increíble portafolio de villas en Marbella. Profesionalidad y atención al detalle inigualables."
+                            </p>
+                            <div class="flex items-center gap-2 mt-3">
+                                <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center
+                                            text-accent font-bold text-sm shrink-0">P</div>
+                                <p class="font-semibold text-primary text-sm">Pedro Keyser</p>
+                            </div>
+                        </div>
+                        <div class="bg-[#F7F3EA] p-5 rounded-xl border-l-4 border-accent">
+                            <p class="italic text-gray-600 text-sm leading-relaxed">
+                                "Encontré mi villa de ensueño en tiempo récord. Muy recomendable para inversores."
+                            </p>
+                            <div class="flex items-center gap-2 mt-3">
+                                <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center
+                                            text-accent font-bold text-sm shrink-0">M</div>
+                                <p class="font-semibold text-primary text-sm">María Lloret</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── WhatsApp flotante ── -->
+    <a href="https://wa.me/34900000000" target="_blank" rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl z-50
+              hover:bg-green-600 hover:scale-110 active:scale-95 transition-all duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-.445-.609-.611-.16-.16-.345-.133-.445-.133z"/>
+        </svg>
+    </a>
+
+    <!-- ── Footer ── -->
+    <footer class="bg-primary text-white py-10 border-t-2 border-accent">
+        <div class="container mx-auto px-6 text-center">
+            <div class="font-serif text-xl font-bold tracking-widest mb-3">ELITE<span class="text-accent">REALTY</span></div>
+            <p class="text-white/50 text-xs uppercase tracking-widest mb-4">Tu hogar, nuestra misión · 2026</p>
+            <div class="flex justify-center space-x-6 text-sm text-white/70">
+                <a href="#" class="hover:text-accent transition">Aviso Legal</a>
+                <a href="#" class="hover:text-accent transition">Política de Cookies</a>
+                <a href="#" class="hover:text-accent transition">Sostenibilidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
